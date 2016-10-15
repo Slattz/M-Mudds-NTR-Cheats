@@ -3,6 +3,7 @@ This is a cheats plugin for Mutant Mudds on 3DS. It has been tested on USA & EUR
 
 How To Use:
 Visit The GbaTemp Thread for a tutorial on how to use this plugin :)
+
 Features In This Plugin:
 
 Infinite Hearts: When enabled, this gives you unlimited hearts. This, however, doesn't stop you from dying to Spikes/The Void/Other Insta-Kill Elements of Mutant Mudds.
