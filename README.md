@@ -8,7 +8,7 @@ Features In This Plugin:
 Infinite Hearts: When enabled, this gives you unlimited hearts. This, however, doesn't stop you from dying to Spikes/The Void/Other Insta-Kill Elements of Mutant Mudds.
 
 Have any suggestions regarding the plugin? Comment in the GbaTemp Thread Here:
-*LINK*
+https://gbatemp.net/threads/release-mutant-mudds-ntr-cheat-plugin.445094/
 
 If anyone needs help, PM me on GbaTemp @ Slattz :)
 
