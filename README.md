@@ -1,5 +1,5 @@
 #Mutant-Mudds-NTR-Cheat-Plugin
-This is a cheats plugin for Mutant Mudds on 3ds. It has been tested on USA & EUR, which seem to have the same offsets...
+This is a cheats plugin for Mutant Mudds on 3DS. It has been tested on USA & EUR, which seem to have the same offsets...
 
 How To Use:
 Visit The GbaTemp Thread for a tutorial on how to use this plugin :)
@@ -12,4 +12,4 @@ Have any suggestions regarding the plugin? Comment in the GbaTemp Thread Here:
 
 If anyone needs help, PM me on GbaTemp @ Slattz :)
 
-Big Thanks To Nanquitas for helping fix errors with the plugin & for his amazing Lib!
+Big Thanks To Nanquitas for helping fix errors with the plugin, for png2c & for his amazing Lib!
