@@ -19,6 +19,7 @@ def allFolderFile(pattern, ext):
 			s+= os.path.join(dirpath, filename) + ' '
 	return s;
 
+VER			= "1.2"
 EUR_TID 	= "00040000000A5400"
 USA_TID 	= "0004000000086600"
 JAP_TID		= "00040000000???00"
@@ -120,7 +121,7 @@ shutil.copy2(COPYTOPATH, "./plugin/plugin/" + EUR_TID + "/" + NAME + "_EUR.plg")
 shutil.copy2(COPYTOPATH, "./plugin/plugin/" + USA_TID + "/" + NAME + "_USA.plg");
 #shutil.copy2(COPYTOPATH, "./plugin/plugin/" + JAP_TID + "/" + NAME + "_JAP.plg");
 printf("Creating the zip folder...");
-shutil.make_archive(NAME, 'zip', ".\plugin");
+shutil.make_archive(NAME + "-v" + VER, 'zip', ".\plugin");
 printf("Should I send the plugin on your console ?");
 user = raw_input();
 if (user == "yes" or user == "y"):

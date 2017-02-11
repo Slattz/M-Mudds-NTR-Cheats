@@ -1,22 +1,98 @@
 #include "cheats.h"
 #include "notes.h"
-#include <string.h>
 
-static const char * const infheart = "Enable this cheat to\nhave infinite Hearts.";
+#define ENTRY_COUNT 300
+
+typedef struct s_menu
+{
+    int         count;
+    int         status;
+    u32         f[ENTRY_COUNT];
+    u32         s[ENTRY_COUNT];
+    int         a[ENTRY_COUNT];
+    const char  *t[ENTRY_COUNT];
+    const char  *n[ENTRY_COUNT];
+    void        (*fp[ENTRY_COUNT])();
+}             t_menu;
+
+
+typedef void    (*FuncPointer)(void);
+extern t_menu menu;
+
+
+/*
+void    new_super_unselectable_entry(char *str, FuncPointer function)
+{
+    int index;
+
+    index = menu.count;
+    if (index >= 300)
+        return;
+    new_unselectable_entry(str);
+    menu.f[index] |= BIT(0) | BIT(1);
+    menu.fp[index] = function;
+}
+*/
+
+void with_note_common(const char *name, const char *note, void (*cheatfunction)(void), int type)
+{
+    int     index;
+
+    if (type == 0)
+        index = new_entry((char *)name, cheatfunction);
+    else if (type == 1)
+        index = new_radio_entry((char *)name, cheatfunction);
+    else if (type == 2)
+        index = new_spoiler((char *)name);
+    else return;
+    set_note(note, index);
+}
+
+inline void new_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
+{
+    with_note_common(name, note, cheatfunction, 0);
+}
+
+inline void new_radio_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
+{
+    with_note_common(name, note, cheatfunction, 1);
+}
+
+inline void new_spoiler_with_note(const char *name, const char *note)
+{
+    with_note_common(name, note, NULL, 2);
+}
 
 char	*builder_name = "Slattz";
 
-void	my_menus(void)
+static inline void  smenu(void)
 {
-	int index;
-	int i;
-	
-		new_unselectable_entry("M-Mudds NTR Cheats Ver. 1.0");
-	index =	new_entry("Infinite Hearts", infLives);
-			set_note(infheart, index);
-	
-	for (i = 2; i <= index; i++)
-		set_note(notes[i - 2], i);
+	new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
+}
+
+void    my_menus(void)
+{
+    u32 tid;
+    
+    set_hid_address(0x10002000); //This is in order to unlock the advanced HID capabilities such as Touchscreen and the stick (No N3DS hid for the moment)
+    tid = get_tid_low();
+    if ((tid == 0xA5400) || (tid == 0x86600))
+    {
+		new_unselectable_entry("M-Mudds NTR Cheats Ver. 1.2");
+    }
+
+   else
+   {
+        new_unselectable_entry("You're Using An Incorrect TitleID!");			
+		new_unselectable_entry("This plugin only supports the");
+		new_unselectable_entry("Following TitleIDs:");
+		//new_unselectable_entry("00040000000???00 (JAP)");
+		new_unselectable_entry("0004000000086600 (USA)");
+		new_unselectable_entry("00040000000A5400 (EUR)");
+		
+        return;
+    }
+    smenu();
 }
 
 

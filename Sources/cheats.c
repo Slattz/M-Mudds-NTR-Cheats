@@ -1,6 +1,6 @@
 #include "cheats.h"
 
-void	infLives(void)
+void	infHearts(void)
 {
-	WRITEU8(0x147E2C44, 0x4);
+	WRITEU8(g_Hearts, 0x4);
 }
