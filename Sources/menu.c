@@ -69,6 +69,7 @@ static inline void  smenu(void)
 {
 	new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
 	new_entry_with_note("Infinite Ghost Bullets", infGBnote, infGBullets);
+	new_entry_with_note("Infinite Time", infTimenote, infTime);
 }
 
 void    my_menus(void)

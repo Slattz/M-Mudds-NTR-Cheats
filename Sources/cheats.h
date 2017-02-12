@@ -21,6 +21,7 @@ Addresses
 
 #define		g_Hearts				0x147E2C44
 #define		g_GBullets				0x001BCD14
+#define		g_Time					0x001BCD18
 
 /*
 Cheats
@@ -28,5 +29,6 @@ Cheats
 
 void	infHearts(void);
 void	infGBullets(void);
+void	infTime(void);
 
 #endif
