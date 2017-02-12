@@ -68,6 +68,7 @@ char	*builder_name = "Slattz";
 static inline void  smenu(void)
 {
 	new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
+	new_entry_with_note("Infinite Ghost Bullets", infGBnote, infGBullets);
 }
 
 void    my_menus(void)
@@ -78,7 +79,7 @@ void    my_menus(void)
     tid = get_tid_low();
     if ((tid == 0xA5400) || (tid == 0x86600))
     {
-		new_unselectable_entry("M-Mudds NTR Cheats Ver. 1.2");
+		new_unselectable_entry("M-Mudds NTR Cheats Ver. 1.2.1");
     }
 
    else

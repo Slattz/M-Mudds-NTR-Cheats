@@ -20,11 +20,13 @@ Addresses
 */
 
 #define		g_Hearts				0x147E2C44
+#define		g_GBullets				0x001BCD14
 
 /*
 Cheats
 */
 
 void	infHearts(void);
+void	infGBullets(void);
 
 #endif
