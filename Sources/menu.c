@@ -80,15 +80,18 @@ void    my_menus(void)
     tid = get_tid_low();
     if (tid == 0x0A5400)
     {
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3 EUR");
     }
 	
 	if (tid == 0x086600)
     {
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3 USA");
     }
 	
 	if (tid == 0x16FD00)
     {
 		assign_region(JAP);
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3 JAP");
     }
 
    else
