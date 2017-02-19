@@ -16,16 +16,33 @@
 #define     SUBTOFLOAT(addr, sub_value)         *(float *)addr -= (float)sub_value
 
 /*
-Addresses
+ EUR/USA Addresses
 */
 
-#define		g_Hearts				0x147E2C44
-#define		g_GBullets				0x001BCD14
-#define		g_Time					0x001BCD18
+#define		HEARTS_ADDR				0x147E2C44
+#define		GBULLETS_ADDR			0x001BCD14
+#define		TIME_ADDR				0x001BCD18
 
+/*
+JAP Addresses
+*/
+
+#define		HEARTS_JAP_ADDR			0x309FD3CC
+#define		GBULLETS_JAP_ADDR		0x001AB68C
+#define		TIME_JAP_ADDR			0x001AB690
+
+
+enum
+{
+	USA = 0,
+	EUR,
+	JAP
+};
+ 
 /*
 Cheats
 */
+void    assign_region(u32 region);
 
 void	infHearts(void);
 void	infGBullets(void);

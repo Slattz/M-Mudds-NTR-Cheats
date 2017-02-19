@@ -21,7 +21,7 @@ def allFolderFile(pattern, ext):
 
 EUR_TID 	= "00040000000A5400"
 USA_TID 	= "0004000000086600"
-JAP_TID		= "00040000000???00"
+JAP_TID		= "000400000016FD00"
 NAME 		= "M-Mudds"
 FTP_FOLDER	= "./plugin/" + USA_TID + "/"
 HOST		= "192.168.1.9"
@@ -118,7 +118,7 @@ if (os.path.isfile(NAME + ".map")):
 printf("Copying the plugin in each folder...");
 shutil.copy2(COPYTOPATH, "./plugin/plugin/" + EUR_TID + "/" + NAME + "_EUR.plg");
 shutil.copy2(COPYTOPATH, "./plugin/plugin/" + USA_TID + "/" + NAME + "_USA.plg");
-#shutil.copy2(COPYTOPATH, "./plugin/plugin/" + JAP_TID + "/" + NAME + "_JAP.plg");
+shutil.copy2(COPYTOPATH, "./plugin/plugin/" + JAP_TID + "/" + NAME + "_JAP.plg");
 printf("Creating the zip folder...");
 shutil.make_archive(NAME, 'zip', ".\plugin");
 printf("Should I send the plugin on your console ?");

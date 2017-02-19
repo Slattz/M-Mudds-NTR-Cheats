@@ -78,9 +78,17 @@ void    my_menus(void)
     
     set_hid_address(0x10002000); //This is in order to unlock the advanced HID capabilities such as Touchscreen and the stick (No N3DS hid for the moment)
     tid = get_tid_low();
-    if ((tid == 0xA5400) || (tid == 0x86600))
+    if (tid == 0x0A5400)
     {
-		new_unselectable_entry("M-Mudds NTR Cheats Ver. 1.2.1");
+    }
+	
+	if (tid == 0x086600)
+    {
+    }
+	
+	if (tid == 0x16FD00)
+    {
+		assign_region(JAP);
     }
 
    else
@@ -88,9 +96,9 @@ void    my_menus(void)
         new_unselectable_entry("You're Using An Incorrect TitleID!");			
 		new_unselectable_entry("This plugin only supports the");
 		new_unselectable_entry("Following TitleIDs:");
-		//new_unselectable_entry("00040000000???00 (JAP)");
-		new_unselectable_entry("0004000000086600 (USA)");
 		new_unselectable_entry("00040000000A5400 (EUR)");
+		new_unselectable_entry("0004000000086600 (USA)");
+		new_unselectable_entry("000400000016FD00 (JAP)");
 		
         return;
     }
