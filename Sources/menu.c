@@ -70,6 +70,10 @@ static inline void  smenu(void)
 	new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
 	new_entry_with_note("Infinite Ghost Bullets", infGBnote, infGBullets);
 	new_entry_with_note("Infinite Time", infTimenote, infTime);
+	/*
+	** Coord Modifier is broken, never fixed it.
+	** new_entry_with_note("Coordinates Modifier", cmnote, coord);
+	*/
 }
 
 void    my_menus(void)
@@ -83,12 +87,12 @@ void    my_menus(void)
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 EUR");
     }
 	
-	if (tid == 0x086600)
+	else if (tid == 0x086600)
     {
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 USA");
     }
 	
-	if (tid == 0x16FD00)
+	else if (tid == 0x16FD00)
     {
 		assign_region(JAP);
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 JAP");
