@@ -87,19 +87,19 @@ void    my_menus(void)
     if (tid == 0x0A5400)
     {
         assign_region(BOTH);
-		new_unselectable_entry("M-Mudds NTR Cheats v1.3 EUR");
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3.1 EUR");
     }
 	
 	else if (tid == 0x086600)
     {
         assign_region(BOTH);
-		new_unselectable_entry("M-Mudds NTR Cheats v1.3 USA");
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3.1 USA");
     }
 	
 	else if (tid == 0x16FD00)
     {
 		assign_region(JAP);
-		new_unselectable_entry("M-Mudds NTR Cheats v1.3 JAP");
+		new_unselectable_entry("M-Mudds NTR Cheats v1.3.1 JAP");
     }
     
     
