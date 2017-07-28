@@ -27,7 +27,7 @@ unsigned char *null_img = (void *)0x0;
 #define CHEATS_LABEL_HEIGHT		21
 #define CHEATS_LABEL_RGB		0
 
-#define SPEED_LABEL			speed_logo
+#define SPEED_LABEL				speed_logo
 #define SPEED_LABEL_POS_X		88
 #define SPEED_LABEL_POS_Y		5
 #define SPEED_LABEL_WIDTH		144
@@ -41,7 +41,7 @@ unsigned char *null_img = (void *)0x0;
 #define HOTKEY_LABEL_HEIGHT		21
 #define HOTKEY_LABEL_RGB		0
 
-#define NOTE_BACKGROUND			note
+#define NOTE_BACKGROUND				note
 #define NOTE_BACKGROUND_POS_X		20
 #define NOTE_BACKGROUND_POS_Y		35
 #define NOTE_BACKGROUND_WIDTH		260

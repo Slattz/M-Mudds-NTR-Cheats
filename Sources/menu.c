@@ -20,7 +20,7 @@ typedef void    (*FuncPointer)(void);
 extern t_menu menu;
 
 
-/*
+
 void    new_super_unselectable_entry(char *str, FuncPointer function)
 {
     int index;
@@ -32,7 +32,8 @@ void    new_super_unselectable_entry(char *str, FuncPointer function)
     menu.f[index] |= BIT(0) | BIT(1);
     menu.fp[index] = function;
 }
-*/
+
+char    *builder_name = "Slattz";
 
 void with_note_common(const char *name, const char *note, void (*cheatfunction)(void), int type)
 {
@@ -48,32 +49,32 @@ void with_note_common(const char *name, const char *note, void (*cheatfunction)(
     set_note(note, index);
 }
 
-inline void new_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
+void new_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
 {
     with_note_common(name, note, cheatfunction, 0);
 }
 
-inline void new_radio_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
+void new_radio_entry_with_note(const char *name, const char *note, void (*cheatfunction)(void))
 {
     with_note_common(name, note, cheatfunction, 1);
 }
 
-inline void new_spoiler_with_note(const char *name, const char *note)
+void new_spoiler_with_note(const char *name, const char *note)
 {
     with_note_common(name, note, NULL, 2);
 }
 
-char	*builder_name = "Slattz";
-
 static inline void  smenu(void)
 {
-	new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
-	new_entry_with_note("Infinite Ghost Bullets", infGBnote, infGBullets);
-	new_entry_with_note("Infinite Time", infTimenote, infTime);
-	/*
-	** Coord Modifier is broken, never fixed it.
-	** new_entry_with_note("Coordinates Modifier", cmnote, coord);
-	*/
+    new_entry_with_note("Infinite Hearts", infheartnote, infHearts);
+    new_entry_with_note("Infinite Ghost Bullets", infGBnote, infGBullets);
+    new_entry_with_note("Infinite Time", infTimenote, infTime);
+    /*
+    ** Coord Modifier is broken, never fixed it.
+    ** new_entry_with_note("Coordinates Modifier", cmnote, coord);
+    */
+
+
 }
 
 void    my_menus(void)
@@ -82,13 +83,16 @@ void    my_menus(void)
     
     set_hid_address(0x10002000); //This is in order to unlock the advanced HID capabilities such as Touchscreen and the stick (No N3DS hid for the moment)
     tid = get_tid_low();
+    
     if (tid == 0x0A5400)
     {
+        assign_region(BOTH);
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 EUR");
     }
 	
 	else if (tid == 0x086600)
     {
+        assign_region(BOTH);
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 USA");
     }
 	
@@ -97,20 +101,18 @@ void    my_menus(void)
 		assign_region(JAP);
 		new_unselectable_entry("M-Mudds NTR Cheats v1.3 JAP");
     }
-
-   else
-   {
-        new_unselectable_entry("You're Using An Incorrect TitleID!");			
+    
+    
+    else
+    {
+        new_unselectable_entry("You're Using An Incorrect TitleID!");            
 		new_unselectable_entry("This plugin only supports the");
 		new_unselectable_entry("Following TitleIDs:");
 		new_unselectable_entry("00040000000A5400 (EUR)");
 		new_unselectable_entry("0004000000086600 (USA)");
 		new_unselectable_entry("000400000016FD00 (JAP)");
-		
+        
         return;
     }
     smenu();
 }
-
-
-

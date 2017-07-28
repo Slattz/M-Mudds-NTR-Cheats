@@ -42,14 +42,15 @@ JAP Addresses
 
 enum
 {
-	USA = 0,
-	EUR,
-	JAP
+    BOTH = 0,
+    JAP
 };
  
 /*
 Cheats
 */
+
+void    disable_entry(int identifier);
 void    assign_region(u32 region);
 
 void	infHearts(void);
